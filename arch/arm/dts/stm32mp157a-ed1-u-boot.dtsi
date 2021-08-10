@@ -211,11 +211,11 @@
 };
 #endif
 
-&uart4 {
+&uart8 {
 	u-boot,dm-pre-reloc;
 };
 
-&uart4_pins_a {
+&uart8_pins_a {
 	u-boot,dm-pre-reloc;
 	pins1 {
 		u-boot,dm-pre-reloc;

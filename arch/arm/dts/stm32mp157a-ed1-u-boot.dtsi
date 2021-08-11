@@ -5,7 +5,7 @@
 
 #include <dt-bindings/clock/stm32mp1-clksrc.h>
 #include "stm32mp15-u-boot.dtsi"
-#include "stm32mp15-ddr3-2x4Gb-1066-binG_400mhz.dtsi"
+#include "stm32mp15-ddr3-2x4Gb-1066-binG_300mhz.dtsi"
 
 / {
 	aliases {
@@ -142,7 +142,7 @@
 	pll2: st,pll@1 {
 		compatible = "st,stm32mp1-pll";
 		reg = <1>;
-		cfg = < 2 49 1 0 0 PQR(1,1,1) >;
+		cfg = < 1 49 2 1 1 PQR(1,1,1) >;
 		u-boot,dm-pre-reloc;
 	};
 

@@ -116,7 +116,7 @@
 			DDR_MR2
 			DDR_MR3
 		>;
-#define DDR_PHY_CAL_SKIP
+
 #ifdef DDR_PHY_CAL_SKIP
 		st,phy-cal = <
 			DDR_DX0DLLCR

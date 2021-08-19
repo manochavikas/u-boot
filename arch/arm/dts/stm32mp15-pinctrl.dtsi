@@ -2087,6 +2087,11 @@
 			slew-rate = <0>;
 		};
 	};
+	i2c4_sleep_pins_lennox: i2c4-sleep-1 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 7, ANALOG)>; /* I2C4_SDA */
+		};
+	};
 };
 
 &pinctrl_z {
@@ -2116,8 +2121,7 @@
 
 	i2c4_sleep_pins_a: i2c4-sleep-0 {
 		pins {
-			pinmux = <STM32_PINMUX('Z', 4, ANALOG)>, /* I2C4_SCL */
-				 <STM32_PINMUX('B', 7, ANALOG)>; /* I2C4_SDA */
+			pinmux = <STM32_PINMUX('Z', 4, ANALOG)>; /* I2C4_SCL */
 		};
 	};
 

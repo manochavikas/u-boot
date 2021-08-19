@@ -88,6 +88,7 @@ __weak void yellow_led_off(void) {}
 __weak void blue_led_on(void) {}
 __weak void blue_led_off(void) {}
 
+int my_var = 0;
 /*
  * Why is gd allocated a register? Prior to reloc it might be better to
  * just pass it around to each function in this file?
@@ -820,8 +821,14 @@ __weak int clear_bss(void)
 {
 	return 0;
 }
-
+//void __asm_mydbg(void);
+__weak int mydbg(void)
+{
+	__asm_mydbg(my_var++);
+	return 0;
+}
 static const init_fnc_t init_sequence_f[] = {
+	//mydbg,
 	setup_mon_len,
 #ifdef CONFIG_OF_CONTROL
 	fdtdec_setup,

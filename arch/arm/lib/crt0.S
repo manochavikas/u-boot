@@ -87,7 +87,11 @@ clbss_l:cmp	r0, r1			/* while not at end of BSS */
 /*
  * entry point of crt0 sequence
  */
-
+	.globl __asm_mydbg
+ENTRY(__asm_mydbg)
+	ldr	r5, =0x40019028
+	str	r0, [r5]
+ENDPROC(__asm_mydbg)
 ENTRY(_main)
 
 /*
@@ -113,8 +117,14 @@ ENTRY(_main)
 	CLEAR_BSS
 #endif
 
+	ldr	r5, =0x40019028
+	ldr	r6, =0x41
+	str	r6, [r5]
 	mov	r0, #0
 	bl	board_init_f
+	ldr	r5, =0x40019028
+	ldr	r6, =0x42
+	str	r6, [r5]
 
 #if ! defined(CONFIG_SPL_BUILD)
 

@@ -308,11 +308,6 @@
 	status = "okay";
 };
 
-&iwdg2 {
-	timeout-sec = <32>;
-	status = "okay";
-};
-
 &m4_rproc {
 	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
@@ -396,16 +391,4 @@
 	/delete-property/dmas;
 	/delete-property/dma-names;
 	status = "okay";
-};
-
-&usbotg_hs {
-	vbus-supply = <&vbus_otg>;
-};
-
-&usbphyc_port0 {
-	phy-supply = <&vdd_usb>;
-};
-
-&usbphyc_port1 {
-	phy-supply = <&vdd_usb>;
 };

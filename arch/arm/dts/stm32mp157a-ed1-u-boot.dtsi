@@ -68,6 +68,12 @@
 		u-boot,dm-pre-reloc;
 	};
 };
+&i2c4_pins_lennox {
+	u-boot,dm-pre-reloc;
+	pins {
+		u-boot,dm-pre-reloc;
+	};
+};
 
 &pmic {
 	u-boot,dm-pre-reloc;
